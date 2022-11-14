@@ -1,4 +1,4 @@
-#!/bin/bash
+#!"/bin/bash
 
 if [ ! -d ~/Bin ]; then
     mkdir ~/Bin

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "bind \'set completion-ignore-case\'" >> ~/.bashrc
+
 sudo apt update && sudo apt upgrade -y
 
 sudo apt install software-properties-common apt-transport-https wget -y
@@ -31,4 +33,6 @@ rvm install ruby-3.1.2
 git config --global user.email "besmith43@gmail.com"
 
 git config --global user.name "Blake Smith"
+
+source ~/.bashrc
 
