@@ -47,3 +47,16 @@ sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
 echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
 sudo apt update && sudo apt install gum
+
+# Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https software-properties-common
+# Download the Microsoft repository GPG keys
+wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
+# Update the list of packages after we added packages.microsoft.com
+sudo apt-get update
+# Install PowerShell
+sudo apt-get install -y powershell
