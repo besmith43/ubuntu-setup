@@ -12,7 +12,7 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/e
 
 sudo apt update && sudo apt install microsoft-edge-stable -y 
 
-sudo apt install gimp audacity ansible python3-pip git powertop rclone clang pkg-config libssl-dev acpi-support acpid acpi cpufrequtils linux-tools-common tmux fzf gnome-tweaks mpv pulseeffects ardour gnupg2 -y
+sudo apt install gimp audacity ansible python3-pip git golang-go powertop rclone clang pkg-config libssl-dev acpi-support acpid acpi cpufrequtils linux-tools-common tmux fzf gnome-tweaks mpv pulseeffects ardour gnupg2 -y
 
 type -p curl >/dev/null || sudo apt install curl -y
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -43,3 +43,7 @@ git config --global user.name "Blake Smith"
 
 source ~/.bashrc
 
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+sudo apt update && sudo apt install gum
