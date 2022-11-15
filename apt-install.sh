@@ -12,7 +12,7 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/e
 
 sudo apt update && sudo apt install microsoft-edge-stable -y 
 
-sudo apt install gimp audacity ansible python3-pip git golang-go powertop rclone clang pkg-config libssl-dev acpi-support acpid acpi cpufrequtils linux-tools-common tmux fzf gnome-tweaks mpv pulseeffects ardour gnupg2 -y
+sudo apt install gimp audacity ansible python3-pip git golang-go dotnet-sdk-6.0 powertop rclone clang pkg-config libssl-dev acpi-support acpid acpi cpufrequtils linux-tools-common tmux fzf gnome-tweaks mpv pulseeffects ardour gnupg2 -y
 
 type -p curl >/dev/null || sudo apt install curl -y
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
