@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install smbios-utils
+sudo apt install smbios-utils -y
 
 sudo smbios-battery-ctl --set-custom-charge-interval 50 80
 
