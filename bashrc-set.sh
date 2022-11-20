@@ -1,7 +1,18 @@
 #!/bin/bash
 
-echo "bind 'set completion-ignore-case'" >> ~/.bashrc
+cat <<EOF >> ~/.bashrc
 
-echo if [ -d ~/Bin ]; then >> ~/.bashrc
-echo "    export PATH=~/Bin:$PATH" >> ~/.bashrc
-echo fi >> ~/.bashrc
+bind 'set completion-ignore-case'
+
+if [ -d ~/Bin ]; then
+    export PATH=~/Bin:$PATH
+fi
+
+export SYSTEMD_EDITOR=nvim
+export EDITOR=nvim
+
+alias ai="sudo apt install -y"
+alias au="sudo apt update && sudo apt upgrade"
+alias chtsh="curl https://cheat.sh/"
+
+EOF
