@@ -2,7 +2,7 @@
 
 mkdir -p ~/.local/share/fonts/
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/UbuntuMono.zip  -d ~/Downloads
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/UbuntuMono.zip  -O ~/Downloads/UbuntuMono.zip
 
 mkdir ~/Downloads/UbuntuMono
 
@@ -14,7 +14,7 @@ rm -r ~/Downloads/UbuntuMono
 
 rm ~/Downloads/UbuntuMono.zip
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip  -d ~/Downloads
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip  -O ~/Downloads/JetBrainsMono.zip
 
 mkdir ~/Downloads/JetBrainsMono
 

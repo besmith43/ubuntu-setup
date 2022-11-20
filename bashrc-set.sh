@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat <<EOF >> ~/.bashrc
+cat << 'EOF' >> ~/.bashrc
 
 bind 'set completion-ignore-case'
 
