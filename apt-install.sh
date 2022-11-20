@@ -11,7 +11,11 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/e
 
 sudo apt update && sudo apt install microsoft-edge-stable -y 
 
-sudo apt install gimp audacity ansible python3-pip git golang-go dotnet-sdk-6.0 cmake powertop rclone clang pkg-config libssl-dev acpid acpi cpufrequtils linux-tools-common tmux fzf gnome-tweaks mpv pulseeffects ardour gnupg2 -y
+sudo apt install gimp audacity ansible python3-pip git golang-go dotnet-sdk-6.0 cmake powertop rclone clang pkg-config libssl-dev acpid acpi cpufrequtils linux-tools-common tmux fzf gnome-tweaks mpv pulseeffects ardour gnupg2 caffeine -y
+
+sudo apt install podman podman-docker podman-compose podman-toolbox -y
+
+sudo apt install libfuse2 -y 
 
 sudo snap install powershell --classic
 
