@@ -17,7 +17,7 @@ export EDITOR=nvim
 
 alias ai="sudo apt install -y"
 alias as="apt search"
-alias au="sudo apt update && sudo apt upgrade"
+alias au="sudo apt update && sudo apt upgrade -y"
 alias chtsh="curl https://cheat.sh/"
 
 EOF
