@@ -8,6 +8,10 @@ if [ -d ~/Bin ]; then
     export PATH=~/Bin:$PATH
 fi
 
+if [ -d ~/.local/bin ]; then
+    export PATH=~/.local/bin:$PATH
+fi
+
 if [ -d /home/linuxbrew/.linuxbrew/bin ]; then
     export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 fi
