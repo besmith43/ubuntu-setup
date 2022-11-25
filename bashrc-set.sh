@@ -16,8 +16,8 @@ if [ -d /home/linuxbrew/.linuxbrew/bin ]; then
     export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 fi
 
-export SYSTEMD_EDITOR=nvim
-export EDITOR=nvim
+export SYSTEMD_EDITOR=lvim
+export EDITOR=lvim
 
 alias ai="sudo apt install -y"
 alias as="apt search"
