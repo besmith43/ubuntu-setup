@@ -19,7 +19,8 @@ trash_info_path=~/.local/share/Trash/info
 time_stamp=$(date +%FT%T)
 
 function help_message {
-    echo "$(basename $0) help message"
+    echo "Usage: $(basename $0) [FILE] [DIR]"
+    echo "    -h    display this message"
     exit
 }
 
@@ -45,34 +46,35 @@ while getopts ${optstring} arg; do
 done
 
 if [ -z $1 ]; then
-    echo "$(basename $0) requires an argument"
+    echo "$(basename $0) requires at least one argument"
     help_message
 fi
 
+for arg_var in "$@"
+do
+    if [ -f $arg_var ]; then
+        # the arg is a file
+        to_be_trashed_path=$(readlink -f $arg_var)
+        touch $trash_info_path/$(basename $arg_var).trashinfo
 
-if [ -f $1 ]; then
-    # the arg is a file
-    to_be_trashed_path=$(readlink -f $1)
-    touch $trash_info_path/$(basename $1).trashinfo
+        echo [Trash Info] > $trash_info_path/$(basename $arg_var).trashinfo
+        echo Path=$to_be_trashed_path >> $trash_info_path/$(basename $arg_var).trashinfo
+        echo DeletionDate=$time_stamp >> $trash_info_path/$(basename $arg_var).trashinfo
 
-    echo [Trash Info] > $trash_info_path/$(basename $1).trashinfo
-    echo Path=$to_be_trashed_path >> $trash_info_path/$(basename $1).trashinfo
-    echo DeletionDate=$time_stamp >> $trash_info_path/$(basename $1).trashinfo
+        mv $to_be_trashed_path $trash_files_path
+    elif [ -d $arg_var ]; then
+        # the arg is a dir
+        to_be_trashed_path=$(readlink -f $arg_var)
+        touch $trash_info_path/$(basename $arg_var).trashinfo
 
-    mv $to_be_trashed_path $trash_files_path
-elif [ -d $1 ]; then
-    # the arg is a dir
-    to_be_trashed_path=$(readlink -f $1)
-    touch $trash_info_path/$(basename $1).trashinfo
+        echo [Trash Info] > $trash_info_path/$(basename $arg_var).trashinfo
+        echo Path=$to_be_trashed_path >> $trash_info_path/$(basename $arg_var).trashinfo
+        echo DeletionDate=$time_stamp >> $trash_info_path/$(basename $arg_var).trashinfo
 
-    echo [Trash Info] > $trash_info_path/$(basename $1).trashinfo
-    echo Path=$to_be_trashed_path >> $trash_info_path/$(basename $1).trashinfo
-    echo DeletionDate=$time_stamp >> $trash_info_path/$(basename $1).trashinfo
-
-    mv $to_be_trashed_path $trash_files_path
-else
-    # houston we have a problem
-    echo 'you must pass a file or directory'
-    help_message
-fi
-
+        mv $to_be_trashed_path $trash_files_path
+    else
+        # houston we have a problem
+        echo 'you must pass a file or directory'
+        help_message
+    fi
+done
