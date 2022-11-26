@@ -14,6 +14,8 @@
 # Path=/home/besmith/Downloads/hplip-3.22.10.run
 # DeletionDate=2022-11-21T19:52:21
 
+mkdir -p ~/.local/share/Trash/
+
 trash_files_path=~/.local/share/Trash/files
 trash_info_path=~/.local/share/Trash/info
 time_stamp=$(date +%FT%T)
