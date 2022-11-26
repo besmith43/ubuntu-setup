@@ -45,4 +45,8 @@ if [ ! $(which place-biosupdate) ]; then
     ln -s $repo_path/place-biosUpdate.sh $bin_path/place-biosupdate
 fi
 
+if [ ! $(which mem-check) ]; then
+    ln -s $repo_path/mem-check.sh $bin_path/mem-check
+fi
+
 
