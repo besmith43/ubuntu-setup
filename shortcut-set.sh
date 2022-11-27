@@ -49,4 +49,8 @@ if [ ! $(which mem-check) ]; then
     ln -s $repo_path/mem-check.sh $bin_path/mem-check
 fi
 
+if [ ! $(which restart) ]; then
+    ln -s $repo_path/restart.sh $bin_path/restart
+fi
+
 
