@@ -3,7 +3,7 @@
 git pull
 git add -A
 
-if [ ! -z $1 ]; then
+if [ ! -z "$1" ]; then
     git commit -m $1
 else
     git commit
