@@ -28,22 +28,32 @@ else
 	cargo install starship --locked
 	cargo install nu
 	cargo install --locked gfold
+  cargo install sccache
+  cargo install gitui
+  cargo install mprocs
+  cargo install wiki-tui
+  cargo install speedtest-rs
+  cargo install cargo-info
+  cargo install cargo-watch
+  cargo install gitoxide
 
 	if [ $rustup_default == "aarch64-pc-windows-msvc" ]; then 
 		# waiting on ring to get updated
 		cargo install --locked pueue --target x86_64-pc-windows-msvc
 		cargo install mdcat --target x86_64-pc-windows-msvc
-    else
+  else
 		cargo install --locked pueue
 		cargo install mdcat
-    fi
+  fi
 
 	if [ $rustup_default != "windows" ]; then
 		cargo install typeracer
 		cargo install dijo
 		cargo install skim
 		cargo install rusty-man
-    fi
+    cargo install exa
+    cargo install cargo-xwin
+  fi
 
 	cargo install cargo-show-asm
 	cargo install cargo-audit
@@ -55,10 +65,10 @@ else
 		# waiting on ring to get updated
 		cargo install cargo-edit --target x86_64-pc-windows-msvc
 		cargo install cargo-make --target x86_64-pc-windows-msvc
-    else
+  else
 		cargo install cargo-edit
 		cargo install cargo-make
-    fi
+  fi
 fi
 
 
